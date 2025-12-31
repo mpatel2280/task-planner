@@ -1,0 +1,8 @@
+bundle install 
+rails db:create 
+rails db:migrate 
+rails tailwindcss:install 
+rails tailwindcss:build
+rails db:fixtures:load
+rails generate solid_cache:install
+one@example.com / password 

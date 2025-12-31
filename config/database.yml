@@ -15,6 +15,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: localhost
+  username: postgres
+  password: postgres
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 sqlite: &sqlite
@@ -25,18 +28,18 @@ sqlite: &sqlite
 development:
   primary:
     <<: *default
-    database: the_life_planner_development
+    database: task_planner_development
   cache:
     <<: *sqlite
-    database: storage/life_task_planner_development_cache.sqlite3
+    database: storage/task_planner_development_cache.sqlite3
     migrations_paths: db/cache_migrate
   cable:
     <<: *sqlite
-    database: storage/life_task_planner_development_cable.sqlite3
+    database: storage/task_planner_development_cable.sqlite3
     migrations_paths: db/cable_migrate
   queue:
     <<: *sqlite
-    database: storage/life_task_planner_development_queue.sqlite3
+    database: storage/task_planner_development_queue.sqlite3
     migrations_paths: db/queue_migrate
 
   # The specified database role being used to connect to PostgreSQL.
@@ -100,13 +103,13 @@ production:
     url: <%= Rails.application.credentials.db_url %>
   cache:
     <<: *sqlite
-    database: storage/life_task_planner_production_cache.sqlite3
+    database: storage/task_planner_production_cache.sqlite3
     migrations_paths: db/cache_migrate
   cable:
     <<: *sqlite
-    database: storage/life_task_planner_production_cable.sqlite3
+    database: storage/task_planner_production_cable.sqlite3
     migrations_paths: db/cable_migrate
   queue:
     <<: *sqlite
-    database: storage/life_task_planner_production_queue.sqlite3
+    database: storage/task_planner_production_queue.sqlite3
     migrations_paths: db/queue_migrate
