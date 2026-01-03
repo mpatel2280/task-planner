@@ -17,3 +17,15 @@ bin/rails db:create:queue
 bin/rails db:migrate:queue
 
 bin/rails db:migrate:redo:queue VERSION=20260102075723
+
+# bin/rails c
+
+ActiveRecord::Base.establish_connection(:queue)
+SolidQueue::RecurringTask.delete_all
+
+SolidQueue::RecurringTask.all
+
+-------------------------------------------------------
+
+ActiveRecord::Base.establish_connection(:queue)
+SolidQueue::RecurringExecution.all

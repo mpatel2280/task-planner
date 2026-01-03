@@ -394,6 +394,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  fugit
   importmap-rails
   jbuilder
   kamal
