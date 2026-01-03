@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # get "user_activities/index"
+  # get "user_activities/show"
+  # get "user_activities/destroy"
+
+  resources :user_activities, only: [:index, :show, :destroy]
+  
   mount MissionControl::Jobs::Engine, at: "/jobs"
 
   resource :session
