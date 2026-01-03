@@ -73,3 +73,10 @@ end
 gem "fugit"
 
 gem "rorvswild"
+
+group :development do
+  gem 'rack-mini-profiler'
+  # Add these for advanced profiling features
+  gem 'stackprof'      # Required for Flamegraphs
+  gem 'memory_profiler' # Required for Memory Profiling
+end
