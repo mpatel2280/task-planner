@@ -80,3 +80,5 @@ group :development do
   gem 'stackprof'      # Required for Flamegraphs
   gem 'memory_profiler' # Required for Memory Profiling
 end
+
+gem "minitest", "~> 5.0"
